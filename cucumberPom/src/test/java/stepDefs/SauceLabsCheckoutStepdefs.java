@@ -1,10 +1,12 @@
 package stepDefs;
+import org.junit.Assert;
+
 import actions.SauceLabsCheckoutActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
 
+@SuppressWarnings({ })
 public class SauceLabsCheckoutStepdefs {
 	String productName;
 	String productPrice;
@@ -30,8 +32,8 @@ public class SauceLabsCheckoutStepdefs {
 	    hm.clickLoginBtn();
 	}
 
-	@Then("user get namd and price of first availaible item")
-	public void user_get_namd_and_price_of_first_availaible_item() {
+	@Then("user get name and price of first availaible item")
+	public void user_get_name_and_price_of_first_availaible_item() {
 	   productName = hm.getProductName();
 	  productPrice=  hm.getProductPrice();
 	}
@@ -46,8 +48,8 @@ public class SauceLabsCheckoutStepdefs {
 	    hm.openCart();
 	}
 
-	@Then("user continue to checkout teh item")
-	public void user_continue_to_checkout_teh_item() {
+	@Then("user continue to checkout the item")
+	public void user_continue_to_checkout_the_item() {
 			
 	}
 
@@ -59,9 +61,9 @@ public class SauceLabsCheckoutStepdefs {
 
 	@Then("user verfiy the confirmation message")
 	public void user_verfiy_the_confirmation_message() {
-	  Assert.assertEquals(productName, hm.getActualProductName());
-	  Assert.assertEquals(productPrice, hm.getActualProductPrice());
-	   Assert.assertEquals("Thank you for your order!",  hm.verifyConfirmationMessage()); 
+		Assert.assertEquals(productName, hm.getActualProductName());
+		  Assert.assertEquals(productPrice, hm.getActualProductPrice());
+		   Assert.assertEquals("Thank you for your order!",  hm.verifyConfirmationMessage());  
 	}
 	
 }
